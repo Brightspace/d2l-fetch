@@ -29,7 +29,6 @@ dist/
 test/dist/
 test/coverage/
 coverage/
-bower_components
 
 
 ### Windows ###
