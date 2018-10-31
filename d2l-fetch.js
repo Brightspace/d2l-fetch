@@ -4,4 +4,5 @@
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-;
+import { D2LFetch } from './src/d2lfetch.js';
+window.d2lfetch = new D2LFetch();
