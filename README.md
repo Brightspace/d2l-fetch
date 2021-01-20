@@ -4,7 +4,7 @@ Provides support for wrapping window.fetch calls within middleware functions.
 ## Setup
 
 ```sh
-yarn install
+npm ci
 ```
 
 ## Usage
@@ -174,9 +174,6 @@ We recommend:
 
 ## Versioning
 
-Commits and PR merges to master will automatically do a minor version bump which will:
-* Update the version in `package.json`
-* Add a tag matching the new version
-* Create a github release matching the new version
+Commits and PR merges to master use the [incremental release](https://github.com/BrightspaceUI/actions/tree/master/incremental-release) Github Action.  By default this repo skips versioning unless you follow [the instructions](https://github.com/BrightspaceUI/actions/tree/master/incremental-release#triggering-a-release
 
 By using either **[increment major]** or **[increment patch]** notation inside your merge message, you can overwrite the default version upgrade of minor to the position of your choice.
