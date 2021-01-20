@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      - '[0-9]+.x'
+      - '[0-9]+.[0-9]+.x'
 jobs:
   release:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
@@ -16,8 +18,9 @@ jobs:
       - name: Setup Node
         uses: Brightspace/third-party-actions@actions/setup-node
         # additional validation steps can be run here
-      - name: Incremental Release
-        uses: BrightspaceUI/actions/incremental-release@master
+      - name: Semantic Release
+        uses: BrightspaceUI/actions/semantic-release@master
         with:
           GITHUB_TOKEN: ${{ secrets.D2L_GITHUB_TOKEN }}
+          NPM: false
           DRY_RUN: true

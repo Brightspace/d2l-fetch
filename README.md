@@ -174,6 +174,5 @@ We recommend:
 
 ## Versioning
 
-Commits and PR merges to master use the [incremental release](https://github.com/BrightspaceUI/actions/tree/master/incremental-release) Github Action.  By default this repo skips versioning unless you follow [the instructions](https://github.com/BrightspaceUI/actions/tree/master/incremental-release#triggering-a-release
+Commits and PR merges to master use the [semantic release](https://github.com/BrightspaceUI/actions/tree/master/semantic-release) Github Action. [Release Triggers](https://github.com/BrightspaceUI/actions/tree/master/semantic-release#triggering-a-release) are used to determine the version.
 
-By using either **[increment major]** or **[increment patch]** notation inside your merge message, you can overwrite the default version upgrade of minor to the position of your choice.
