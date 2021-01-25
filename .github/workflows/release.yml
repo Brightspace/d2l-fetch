@@ -23,4 +23,3 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.D2L_GITHUB_TOKEN }}
           NPM: false
-          DRY_RUN: true
