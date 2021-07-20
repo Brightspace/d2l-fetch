@@ -114,6 +114,20 @@ window.d2lfetch
 	});
 ```
 
+If you want to have the temporary middleware added to the beginning of the middleware chain, you can pass `prepend: true` into the options object.
+
+Example:
+
+```js
+window.d2lfetch.use({name: 'myMiddlewareName', fn: myMiddlewareFunc});
+
+window.d2lfetch
+	.addTemp(
+		{ name: 'addedMiddlewareName', fn: function() { /* added middleware functionality */ } },
+		{ prepend: true }
+	)
+```
+
 ### RemoveTemp
 
 Use the `removeTemp` function to temporarily remove a specified middleware from the middleware chain. Returns a new `D2LFetch` object with the updated middleware chain.
