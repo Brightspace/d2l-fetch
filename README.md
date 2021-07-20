@@ -114,7 +114,7 @@ window.d2lfetch
 	});
 ```
 
-If you want to have the temporary middleware added to the beginning of the middle chain, you can pass `prepend: true` into the options object.
+If you want to have the temporary middleware added to the beginning of the middleware chain, you can pass `prepend: true` into the options object.
 
 Example:
 
