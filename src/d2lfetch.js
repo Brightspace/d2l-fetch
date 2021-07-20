@@ -22,12 +22,17 @@ export class D2LFetch {
 		this._installedMiddlewares.push({ name, fn: this._wrapMiddleware(fn, options) });
 	}
 
-	addTemp(middleware) {
+	addTemp(middleware, { prepend = false } = { prepend: false } ) {
 		const {name, fn, options} = this._verifyMiddleware(middleware);
 		const self = new D2LFetch();
 
 		self._installedMiddlewares = this._installedMiddlewares.slice();
-		self._installedMiddlewares.push({ name, fn: self._wrapMiddleware(fn, options) });
+		const toAdd = { name, fn: self._wrapMiddleware(fn, options) };
+		if (prepend) {
+			self._installedMiddlewares.unshift(toAdd);
+		} else {
+			self._installedMiddlewares.push(toAdd);
+		}
 
 		return self;
 	}
