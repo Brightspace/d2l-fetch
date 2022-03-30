@@ -5,7 +5,7 @@ var invalidRequestInputs = [
 	null,
 	1,
 	{},
-	{ whatiam: 'is not a Request'}
+	{ whatiam: 'is not a Request' }
 ];
 
 var invalidMiddlewareInputs = [
@@ -15,7 +15,7 @@ var invalidMiddlewareInputs = [
 	'notMiddleware',
 	[],
 	{},
-	{ whatiam: 'is not middleware'},
+	{ whatiam: 'is not middleware' },
 	{ name: 'validName' },
 	{ fn: function() {} },
 	{ name: undefined, fn: undefined },
