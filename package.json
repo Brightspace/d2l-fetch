@@ -9,7 +9,7 @@
     "test": "npm run test:lint && npm run test:headless",
     "test:headless": "web-test-runner test/**/*.test.js --node-resolve --group default",
     "test:headless:watch": "web-test-runner test/**/*.test.js --node-resolve --group default --watch",
-    "test:lint": "eslint d2l-fetch.js src/ test/ --ext .js"
+    "test:lint": "eslint . --ext .js,.html"
   },
   "devDependencies": {
     "@babel/core": "^7",
