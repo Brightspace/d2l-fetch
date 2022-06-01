@@ -1,11 +1,12 @@
 {
-  "extends": "brightspace/browser-config",
+  "extends": "brightspace/node-config",
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "env": {
-    "es6": true,
     "browser": true
   },
-  "parserOptions": {
-    "ecmaVersion": 2017,
-    "sourceType": "module"
-  }
+  "plugins": [
+    "html"
+  ]
 }

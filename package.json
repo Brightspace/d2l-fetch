@@ -1,25 +1,32 @@
 {
   "name": "d2l-fetch",
   "description": "Provides support for wrapping window.fetch calls within middleware functions",
+  "type": "module",
   "main": "src/d2lfetch.js",
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "scripts": {
-    "test:lint": "eslint d2l-fetch.js src/ test/ --ext .js",
-    "test:local": "wct --skip-plugin sauce --npm",
-    "test:ci": "wct --skip-plugin local --npm",
-    "test": "npm run test:lint && npm run test:local"
+    "test": "npm run test:lint && npm run test:headless",
+    "test:headless": "web-test-runner test/**/*.test.js --node-resolve --group default",
+    "test:headless:watch": "web-test-runner test/**/*.test.js --node-resolve --group default --watch",
+    "test:lint": "eslint . --ext .js,.html"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.17.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.10.0",
-    "eslint-config-brightspace": "^0.16.1",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-plugin-sort-class-members": "^1.14.1",
-    "frau-ci": "^1.42.2",
-    "wct-browser-legacy": "^1.0.2",
-    "web-component-tester": "^6.9.2"
+    "@babel/core": "^7",
+    "@babel/eslint-parser": "^7",
+    "@open-wc/testing": "^3",
+    "@web/test-runner": "^0.13",
+    "eslint": "^8",
+    "eslint-config-brightspace": "^0.17",
+    "eslint-plugin-html": "^6",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-lit": "^1",
+    "eslint-plugin-sort-class-members": "^1",
+    "sinon": "^14"
   },
+  "files": [
+    "/src",
+    "d2l-fetch.js"
+  ],
   "version": "2.3.2"
 }
