@@ -45,6 +45,6 @@ jobs:
         run: |
           npm ci
           npm install @web/test-runner-playwright --no-save
-          npx playwright install-dep
+          npx playwright install-deps
       - name: tests
         run: npx web-test-runner test/**/*.test.js --node-resolve --group default --playwright --browsers chromium firefox webkit
