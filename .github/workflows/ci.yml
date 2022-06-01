@@ -8,13 +8,10 @@ jobs:
     steps:
       - uses: Brightspace/third-party-actions@actions/checkout
       - uses: Brightspace/third-party-actions@actions/setup-node
-      - uses: Brightspace/third-party-actions@actions/cache
-        id: cache
         with:
-          path: '**/node_modules'
-          key: npm-${{ hashFiles('**/package-lock.json') }}
+          node-version-file: .nvmrc
+          cache: 'npm'
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint (JavaScript)
         run: npm run test:lint
@@ -26,16 +23,13 @@ jobs:
     steps:
       - uses: Brightspace/third-party-actions@actions/checkout
       - uses: Brightspace/third-party-actions@actions/setup-node
-      - uses: Brightspace/third-party-actions@actions/cache
-        id: cache
         with:
-          path: '**/node_modules'
-          key: npm-${{ hashFiles('**/package-lock.json') }}
+          node-version-file: .nvmrc
+          cache: 'npm'
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Headless Tests
-        run: npm run test:local
+        run: npm run test:headless
   unit:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     name: Unit Tests
@@ -44,16 +38,13 @@ jobs:
     steps:
       - uses: Brightspace/third-party-actions@actions/checkout
       - uses: Brightspace/third-party-actions@actions/setup-node
-      - uses: Brightspace/third-party-actions@actions/cache
-        id: cache
         with:
-          path: '**/node_modules'
-          key: npm-${{ hashFiles('**/package-lock.json') }}
+          node-version-file: .nvmrc
+          cache: 'npm'
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: |
+          npm ci
+          npm install @web/test-runner-playwright --no-save
+          npx playwright install-dep
       - name: tests
-        run: npm run test:ci
-        env:
-          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY_DESIRE2LEARN }}
-          SAUCE_USERNAME: Desire2Learn
+        run: npx web-test-runner test/**/*.test.js --node-resolve --group default --playwright --browsers chromium firefox webkit
