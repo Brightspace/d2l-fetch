@@ -17,11 +17,7 @@
     "@open-wc/testing": "^3",
     "@web/test-runner": "^0.13",
     "eslint": "^8",
-    "eslint-config-brightspace": "^0.17",
-    "eslint-plugin-html": "^6",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-lit": "^1",
-    "eslint-plugin-sort-class-members": "^1",
+    "eslint-config-brightspace": "^0.19",
     "sinon": "^14"
   },
   "files": [
