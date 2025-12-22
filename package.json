@@ -7,18 +7,14 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "npm run test:lint && npm run test:headless",
-    "test:headless": "web-test-runner test/**/*.test.js --node-resolve --group default",
-    "test:headless:watch": "web-test-runner test/**/*.test.js --node-resolve --group default --watch",
-    "test:lint": "eslint . --ext .js,.html"
+    "test:headless": "d2l-test-runner",
+    "test:lint": "eslint ."
   },
   "devDependencies": {
-    "@babel/core": "^7",
-    "@babel/eslint-parser": "^7",
-    "@open-wc/testing": "^3",
-    "@web/test-runner": "^0.13",
-    "eslint": "^8",
-    "eslint-config-brightspace": "^0.19",
-    "sinon": "^14"
+    "@brightspace-ui/testing": "^1",
+    "eslint": "^9",
+    "eslint-config-brightspace": "^2",
+    "sinon": "^21"
   },
   "files": [
     "/src",

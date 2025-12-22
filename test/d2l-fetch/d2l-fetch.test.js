@@ -1,5 +1,5 @@
 import '../../d2l-fetch.js';
-import { expect } from '@open-wc/testing';
+import { expect } from '@brightspace-ui/testing';
 import sinon from 'sinon';
 
 const invalidRequestInputs = [
