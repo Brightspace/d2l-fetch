@@ -14,7 +14,7 @@
     "@brightspace-ui/testing": "^1",
     "eslint": "^9",
     "eslint-config-brightspace": "^3",
-    "sinon": "^21"
+    "sinon": "^22"
   },
   "files": [
     "/src",
