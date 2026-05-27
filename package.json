@@ -20,5 +20,9 @@
     "/src",
     "d2l-fetch.js"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "version": "2.7.0"
 }
