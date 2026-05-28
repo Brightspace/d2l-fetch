@@ -7,11 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: Brightspace/third-party-actions@actions/checkout
-      - uses: Brightspace/setup-node@v2
+      - uses: Brightspace/setup-node@main
         with:
           node-version-file: .nvmrc
           cache: 'npm'
-          registry-auth-token: ${{ secrets.D2L_PACKAGE_REGISTRY_AUTH_TOKEN }}
       - name: Install dependencies
         run: npm ci
       - name: Lint (JavaScript)
